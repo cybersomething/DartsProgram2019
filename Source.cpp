@@ -4,10 +4,11 @@
 #include <cstdlib>
 #include <ctime>
 #include "player.h"
+#include "board.h"
+#include "score.h"
+#include "game.h"
 
 using namespace std;
-
-//int bull (int percent)
 
 int main()
 {
@@ -18,43 +19,38 @@ int main()
 
 	int hit = 0;
 	int miss = 0;
-
-	player player1(1);
-	player player2(2);
+	
+	string name1;
+	string name2;
+	int bull_success1;
+	int bull_success2;
+	int single_success1;
+	int single_success2;
 
 	cout << "Welcome to Darts!" << endl;
 	cout << "What is player one's name?" << endl;
-	string name = player1.getName();
-	
+	cin >> name1;
+	cout << "What is your bullseye success rate?" << endl;
+	cin >> bull_success1;
+	cout << "What is your singles success rate?" << endl;
+	cin >> single_success1;
+
 	cout << "What is player two's name?" << endl;
-	string name = player2.getName();
+	cin >> name2;
+	cout << "What is your bullseye success rate?" << endl;
+	cin >> bull_success2;
+	cout << "What is your singles success rate?" << endl;
+	cin >> single_success2;
 
-	cout << "What is your success rate?" << endl;
-	cin >> percent;
+	player player1(1, name1, bull_success1, single_success1);
+	player player2(2, name2, bull_success2, single_success2);
 
-		while (hit != 10)
-		{ 
-			int r = rand() % 100;
-
-			if (r <= percent)
-			{
-			
-			hit++;
-			}
-			else
-			{
-			
-			miss++;
-			}
-		}
-
-		cout << "It taken you " << hit + miss << " tries to hit the bullseye ten times." << endl;
-	
-		double average = ((double)hit+miss) /hit;
-
-		cout << "Your average bullseye hits were, "<< average << endl;
+	cout << player1.setName() << endl;
+	cout << player1.getBullSuccess() << endl;
+	cout << player1.getSingleSuccess() << endl;
+	cout << player1.getNeighbourRate() << endl;
 
 	cin >> x;
+
 	return 0;
-	
 }

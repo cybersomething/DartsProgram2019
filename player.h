@@ -10,14 +10,31 @@ private:
 	int PlayerID;
 	string PlayerName;
 	int PlayerAverage;
-	int PlayerSuccessRate;
 
 public:
-	player(int, string);
+	int success_rate_bulls;
+	int success_rate_singles;
+	int success_rate_neighbour;
+
+	player(int, string, int, int);
 	~player();
 
-	void setName(string n);
+	void getID(int i);
 
-	string getName();
+	void getName(string n);
+
+	void getBullSuccess(int x);
+
+	void getSingleSuccess(int y);
+
+	int setID();
+
+	string setName();
+
+	int getBullSuccess();
+
+	int getSingleSuccess();
+
+	int getNeighbourRate();
 };
 
