@@ -14,27 +14,34 @@ private:
 public:
 	int success_rate_bulls;
 	int success_rate_singles;
-	int success_rate_neighbour;
+	int success_rate_doubles;
+	int success_rate_triples;
 
-	player(int, string, int, int);
+	player(int, string, int, int, int, int);
 	~player();
 
 	void getID(int i);
 
 	void getName(string n);
 
-	void getBullSuccess(int x);
+	void getBullSuccess(int w);
 
-	void getSingleSuccess(int y);
+	void getSingleSuccess(int x);
+
+	void getDoubleSuccess(int y);
+
+	void getTripleSuccess(int z);
 
 	int setID();
 
 	string setName();
 
-	int getBullSuccess();
+	int setBullSuccess();
 
-	int getSingleSuccess();
+	int setSingleSuccess();
 
-	int getNeighbourRate();
+	int setDoubleSuccess();
+
+	int setTripleSuccess();
 };
 
