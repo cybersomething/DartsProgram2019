@@ -19,14 +19,14 @@ int main()
 
 	int hit = 0;
 	int miss = 0;
-	
+
 	string name1;
 	string name2;
 	int bull_success1;
 	int single_success1;
 	int double_success1;
 	int triple_success1;
-	
+
 	int bull_success2;
 	int single_success2;
 	int double_success2;
@@ -44,6 +44,8 @@ int main()
 	cout << "What is your triples success_rate?" << endl;
 	cin >> triple_success1;
 
+	cout << "***********************************" << endl;
+
 	cout << "What is player two's name?" << endl;
 	cin >> name2;
 	cout << "What is your bullseye success rate?" << endl;
@@ -59,7 +61,7 @@ int main()
 	player player1(1, name1, bull_success1, single_success1, double_success1, triple_success1);
 	player player2(2, name2, bull_success2, single_success2, double_success2, triple_success2);
 
-	cin >> x;
+	game DeciderThrow(int bull_success1, int bull_success2);
 
 	return 0;
 }

@@ -2,7 +2,7 @@
 class score
 {
 public:
-	score();
+	score(int i);
 	~score();
 
 	int starting_score;

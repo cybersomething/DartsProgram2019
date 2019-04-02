@@ -14,4 +14,3 @@ public:
 	int throw_double(int d);
 	int throw_triple(int d, int p);
 };
-
