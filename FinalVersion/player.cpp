@@ -1,77 +1,45 @@
-#include <iostream>
-#include "player.h"
+#include <iostream> //allows cin and cout to be used
+#include "player.h" //includes header for this class
+
 using namespace std;
 
-player::player()
+player::player(string PlayerName, int success, int PlayerID) //using constructor to get inputted data from main function
 {
+	this->PlayerName = PlayerName; //assigning data from main to class variable PlayerName with class pointer
+	this->success_rate = success; //assigning data from main to class variable success with class pointer
+	this->PlayerID = PlayerID; //assigning data from main to class variable PlayerID with class pointer
+	current_score = 501; //sets current score to 501 so score is at 501 when new game takes place.
 }
 
-
-player::~player()
+player::~player() //deconstructor left empty deliberately
 {
 }
 
 //setters
 
-void player::setValues1(string PlayerName, int success, int PlayerID )
+void player::setCurrentScore(int x, int y) //setter used to calculate new current_score after legal dart throw
 {
-	this->PlayerName1 = PlayerName;
-	this->success_rate1 = success;
-	this->PlayerID1 = PlayerID;
-}
-
-void player::setValues2(string PlayerName, int success, int PlayerID)
-{
-	this->PlayerName2 = PlayerName;
-	this->success_rate2 = success;
-	this->PlayerID2 = PlayerID;
+	current_score = x - y; //current_score = (variable passed in - variable passed in);
 }
 
 //getters
 
-string player::getName1()
+int player::getCurrentScore() //getter used to return current score when used in game class
 {
-	return PlayerName1;
+	return current_score;
 }
 
-int player::getSuccess1()
+string player::getName() //getter used to return current score when used in game class
 {
-	return success_rate1;
+	return PlayerName;
 }
 
-int player::getID1()
+int player::getSuccess() //getter used to return current score when used in game class
 {
-	return PlayerID1;
+	return success_rate;
 }
 
-string player::getName2()
+int player::getID() //getter used to return player's ID when used in game class (sets how players take their turn)
 {
-	return PlayerName2;
+	return PlayerID;
 }
-
-int player::getSuccess2()
-{
-	return success_rate2;
-}
-
-int player::getID2()
-{
-	return PlayerID2;
-}
-
-
-void player::displayMessage()
-{
-	cout << "This is to show that the classes are working." << endl;
-}
-
-//functions
-
-int player::success_rate1 = success_rate1;
-int player::PlayerID1 = PlayerID1;
-string player::PlayerName1 = PlayerName1;
-
-
-int player::success_rate2 = success_rate2;
-int player::PlayerID2 = PlayerID2;
-string player::PlayerName2 = PlayerName2;
